@@ -1,8 +1,31 @@
 // optimize for production
-// css minimizer only works in production mode
+const { merge } = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-// use this minimizer in production
-// use: [MiniCssExtractPlugin.loader, 'css-loader'],
+const common = require('./webpack.common');
 
-
-// Read miniCssExtract & CssMinimizer documentation and follow best practices in dev and prod mode
+module.exports = merge(common, {
+    mode: 'production',
+    devtool: false,
+    module : {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ],
+            }
+        ]
+    },
+    plugins: [
+        new MiniCssExtractPlugin(),
+    ],
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin()
+        ]
+    }
+});

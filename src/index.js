@@ -1,9 +1,6 @@
 import './style.css';
+import BannerImage from './images/banner-img.svg'
 
-// Create heading node
-const heading = document.createElement('h1')
-heading.textContent = 'Hello world!'
-
-// Append heading node to the DOM
-const app = document.querySelector('#root')
-app.append(heading)
+// banner image
+const bannerImg = document.querySelector('#banner-img');
+bannerImg.src = BannerImage;

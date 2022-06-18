@@ -1,3 +1,191 @@
-#root {
-    color: red;
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: #7000FF;
 }
+
+/* Global */
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    padding-top: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 0.2rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    height: 100%;
+}
+
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+/* navbar */
+
+.navbar {
+    background: rgb(246, 246, 246);
+    height: 65px;
+}
+
+.navbar h1 {
+    font-size: 20px;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+    height: 100%;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar h1 {
+    cursor: pointer;
+}
+
+.navbar h1 span {
+    color: var(--primary-color);
+}
+
+.navbar a {
+    color: #333;
+    margin: 10px;
+}
+
+.navbar button {
+    padding: 0.2rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+}
+
+/* banner */
+/* 
+banner height - 65pc
+acheivements section height - 121px
+*/
+
+.banner {
+    height: calc(100vh - 65px - 121px);
+}
+
+/* .banner .flex {
+    justify-content: space-between;
+    height: 100%;
+} */
+
+.banner-text h1 {
+    font-size: 2.5rem;
+}
+
+.banner-text span {
+    color: var(--primary-color);
+}
+
+.banner-text p {
+    font-size: 1.8rem;
+    color: #8F8F8F;
+}
+
+.banner-text {
+    width: 400px;
+}
+
+.banner-text p {
+    padding: 1.25rem 0;
+}
+
+.banner-image {
+    display: flex;
+    justify-content: right;
+}
+
+/* .banner-text button {
+
+} */
+
+
+/* .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+} */
+
+/* achievements */
+
+.acheivements {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.acheivements .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 113px;
+    padding: 1rem 0;
+}
+
+.acheivement-item {
+    display: flex;
+}
+
+.acheivement-item h1 {
+    font-size: 4rem;
+}
+
+.acheivement-item p {
+    font-size: 1.25rem;
+    /* margin-left: 10px; */
+    margin: auto 0 auto 10px;
+    font-weight: bold;
+}
+
+
+/* 
+responsive
+https://youtu.be/p0bGHP-PXD4
+
+*/

@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
 
   <body>
     <!-- <%= htmlWebpackPlugin.options.myPageHeader %> -->
 
-    <!-- navbar -->
+    <!-- navbar large -->
     <div class="navbar">
       <div class="container flex">
         <h1>Edge <span>Bank</span></h1>
-        <nav>
+        <nav class="nav-lg">
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Wealth Management</a></li>
@@ -19,8 +22,30 @@
             <li><a href="#">Investment Banking</a></li>
           </ul>
         </nav>
-        <button>Sign in</button>
+        <button class="primary-button nav-lg-btn">Sign in</button>
+
+        <!-- hamburger menu -->
+        <div class="hamburger" id="menu-btn">
+          <div class="hamburger-top"></div>
+          <div class="hamburger-middle"></div>
+          <div class="hamburger-bottom"></div>
+        </div>
       </div>
+    </div>
+
+    <!-- mobile navbar -->
+    <div class="mobile-menu hidden">
+      <!-- <div class="container"> -->
+        <nav class="nav-sm">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Wealth Management</a></li>
+            <li><a href="#">Credit Cards</a></li>
+            <li><a href="#">Investment Banking</a></li>
+            <li><button class="primary-button nav-sm-btn">Sign in</button></li>
+          </ul>
+        </nav>
+      <!-- </div> -->
     </div>
 
     <!-- banner -->
@@ -29,7 +54,7 @@
         <div class="banner-text">
           <h1>Simplify Your <span>Life</span></h1>
           <p>Partner with us and manage your finance and banking needs Online</p>
-          <button>Join Now</button>
+          <button class="primary-button">Join Now</button>
         </div>
         <div class="banner-image">
           <img src="" id="banner-img" alt="banner image">
@@ -54,8 +79,111 @@
         </div>
         <div class="acheivement-item">
           <h1>30</h1>
-          <p>Plus <br/>Awards</p>
+          <p>Plus Awards</p>
         </div>
+      </div>
+    </section>
+
+    <!-- services -->
+    <section class="services">
+      <div class="container grid">
+          <div class="services-item">
+            <img src="" alt="commercial" id="commercial" />
+            <h3>Commercial Bank</h3>
+            <p>We take you business personally, and our tools help you to get it done</p>
+          </div>
+          <div class="services-item">
+            <img src="" alt="personal" id="personal" />
+            <h3>Personal banking</h3>
+            <p>Everything you need from a bank, right at your fingertips</p>
+          </div>
+          <div class="services-item">
+            <img src="" alt="loan" id="loan" />
+            <h3>Loan Services</h3>
+            <p>lowest loaning rates with same-day funding available</p>
+          </div>
+      </div>
+    </section>
+
+    <!-- card -->
+    <section class="card">
+      <div class="container">
+        <div class="card-heading">
+          <h1>why choose our <span>credit card</span></h1>
+        </div>
+        <div class="grid">
+          <div class="card-image">
+            <img src="" id="credit-card" alt="visa card image" />
+          </div>
+          <div class="card-text">
+            <ul>
+              <li>
+                <img src="" id="list-img" class="list-img" alt="list-icon">
+                <p>Zero Liability Protection</p>
+              </li>
+              <li>
+                <img src="" id="list-img" class="list-img" alt="list-icon">
+                <p>Visacard Global Emergency Services</p>
+              </li>
+              <li>
+                <img src="" id="list-img" class="list-img" alt="list-icon">
+                <p>ID Theft Resolution Services</p>
+              </li>
+              <li>
+                <img src="" id="list-img" class="list-img" alt="list-icon">
+                <p>Earn 1% cash back for everyday</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- guidence -->
+    <section class="guidance">
+      <div class="container">
+        <div class="guidance-heading">
+          <h1>guidance to help you reach your <span>financial goals</span></h1>
+        </div>
+        <div class="guidance-items grid">
+          <div class="guidance-item">
+            <h1>Bank Where Ever Life Takes You</h1>
+            <p>Accounts and services that help make it easier to manage your money</p>
+          </div>
+          <div class="guidance-item">
+            <h1>Explore Your Credit And Borrowing Options</h1>
+            <p>Tips to help build your credit and manage your debt</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- get in touch -->
+    <section class="get-in-touch">
+      <div class="container">
+        <div class="get-in-touch-heading">
+          <h1>Get in Touch</h1>
+        </div>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" class="form-text" />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" class="form-text" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-text" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <input type="text" class="form-text" />
+          </div>
+        </form>
       </div>
     </section>
 

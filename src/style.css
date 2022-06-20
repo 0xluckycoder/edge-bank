@@ -2,6 +2,7 @@
 
 :root {
     --primary-color: #7000FF;
+    --light-text: #808080;
 }
 
 /* Global */
@@ -16,9 +17,9 @@ body {
     margin: 0;
 }
 
-section {
+/* section {
     padding-top: 1rem;
-}
+} */
 
 ul {
     list-style: none;
@@ -100,20 +101,64 @@ button {
     padding: 0.5rem 1.5rem;
 }
 
-/* banner */
-/* 
-banner height - 65pc
-acheivements section height - 121px
-*/
+/* hamburger css */
 
-.banner {
-    height: calc(100vh - 65px - 121px);
+/* hide hamburger menu in desktop */
+.hamburger {
+    display: none;
 }
 
-/* .banner .flex {
-    justify-content: space-between;
+.hamburger div:not(:last-child) {
+    margin-bottom: 5px;   
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    width: 24px;
+    height: 3px;
+    background: #000;
+}
+
+/* mobile menu */
+.mobile-menu {
+    position: fixed;
+    background: var(--primary-color);
+    top: 65px;
+    width: 100%;
     height: 100%;
-} */
+    left: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
+}
+
+.hidden {
+    transform: translateX(100%)
+}
+
+.mobile-menu .nav-sm {
+    font-size: 20px;
+}
+
+.nav-sm ul {
+    line-height: 2.6;
+    padding:1rem 0 0 1rem;
+}
+
+.nav-sm a {
+    color: #fff;
+}
+
+.nav-sm button {
+    background-color: #fff;
+    color: #000;
+}
+
+/* banner */
+
+.banner {
+    height: calc(100vh - 65px - 105px);
+}
 
 .banner-text h1 {
     font-size: 2.5rem;
@@ -141,20 +186,6 @@ acheivements section height - 121px
     justify-content: right;
 }
 
-/* .banner-text button {
-
-} */
-
-
-/* .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-} */
-
 /* achievements */
 
 .acheivements {
@@ -164,8 +195,9 @@ acheivements section height - 121px
 
 .acheivements .grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 113px;
-    padding: 1rem 0;
+    gap: 6rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .acheivement-item {
@@ -178,14 +210,180 @@ acheivements section height - 121px
 
 .acheivement-item p {
     font-size: 1.25rem;
-    /* margin-left: 10px; */
     margin: auto 0 auto 10px;
     font-weight: bold;
 }
+
+/* services */
+
+.services .grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5rem;
+}
+
+.services-item {
+    padding: 3rem;
+    margin-top: 173px;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+    height: 300px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.services-item h3 {
+    padding-top: 1.25rem;
+    font-size: 1.5rem;
+}
+
+.services-item p {
+    padding-top: 0.9rem;
+    color: var(--light-text);
+    font-size: 1.25rem;
+}
+
+/* card & guidance common styles */
+
+.card-heading,
+.guidance-heading,
+.get-in-touch-heading {
+    margin: 173px auto 100px auto;
+    text-align: center;
+}
+
+/* .card-heading,
+.guidance-heading,
+.get-in-touch-heading {
+
+} */
+
+.card-heading h1,
+.guidance-heading h1,
+.get-in-touch-heading h1 {
+    font-size: 2.5rem;
+    text-transform:capitalize;
+}
+
+.card-heading span,
+.guidance-heading span {
+    color: var(--primary-color);
+}
+
+/* credit card */
+
+.card-heading {
+    max-width: 400px;
+}
+
+.card-text ul li {
+    display: flex;
+    gap: 0.7rem;
+}
+
+.card-text ul li:not(:last-child) {
+    padding-bottom: 2rem;
+}
+
+/* guidance */
+
+.guidance .grid {
+    gap: 5rem;
+}
+
+.guidance-heading {
+    max-width: 600px;
+}
+
+.guidance-items {
+    margin: 0.5rem 0;
+}
+
+.guidance-item {
+    padding: 3rem;
+    height: 350px;
+    max-width: 405px;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-top: 8px solid var(--primary-color);
+}
+
+.guidance-item h1 {
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+.guidance-item p {
+    color: var(--light-text);
+    padding-top: 1rem;
+    font-size: 1.25rem;
+}
+
+/* get in touch */
 
 
 /* 
 responsive
 https://youtu.be/p0bGHP-PXD4
 
+max-width, max-heigt
+never use fixed sizes
+use seperate navbars
+
+[ ] - make scroll unavailable in mobile version
+[ ] - add overlay to mobile navbar
 */
+
+@media (max-width: 1170px) {
+    .acheivements .grid {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 950px) {
+
+    /* show hamburger menu on mobile */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-lg,
+    .nav-lg-btn {
+        display: none;
+    }
+
+    /* banner */
+    .banner {
+        height: auto;
+    }
+    
+    .banner .grid {
+        grid-template-columns: 1fr;
+        overflow: hidden;
+        row-gap: 5rem;
+    }
+
+    .banner .banner-image {
+        justify-content: center;
+    }
+
+    .banner .banner-text {
+        text-align: center;
+        margin: auto;
+    }
+
+    /* acheivements */
+
+    .acheivements {
+        margin-top: 5rem;
+    }
+    
+    .acheivements .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .acheivement-item {
+        max-width: 194px;
+        margin: auto;
+    }
+}

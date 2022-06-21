@@ -27,16 +27,20 @@ for (let nodeListItem of listNodeList) {
 // hamburger trigger
 const hamburgerButton = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
+const body = document.querySelector('body');
 
 let isMenuOpened = false;
 
 hamburgerButton.addEventListener('click', (e) => {
+    console.log(isMenuOpened)
     if (isMenuOpened) {
         // closing
+        body.style.overflowY = "auto";
         mobileMenu.classList.add('hidden');
         isMenuOpened = false;
     } else {
         // opening
+        body.style.overflowY = "hidden";
         mobileMenu.classList.remove('hidden');
         mobileMenu.classList.add('open');
         isMenuOpened = true;

@@ -109,7 +109,7 @@ button {
 }
 
 .hamburger div:not(:last-child) {
-    margin-bottom: 5px;   
+    margin-bottom: 5px;
 }
 
 .hamburger-top,
@@ -142,7 +142,7 @@ button {
 
 .nav-sm ul {
     line-height: 2.6;
-    padding:1rem 0 0 1rem;
+    padding: 1rem 0 0 1rem;
 }
 
 .nav-sm a {
@@ -174,7 +174,7 @@ button {
 }
 
 .banner-text {
-    width: 400px;
+    max-width: 400px;
 }
 
 .banner-text p {
@@ -265,7 +265,7 @@ button {
 .guidance-heading h1,
 .get-in-touch-heading h1 {
     font-size: 2.5rem;
-    text-transform:capitalize;
+    text-transform: capitalize;
 }
 
 .card-heading span,
@@ -327,7 +327,7 @@ button {
 .get-in-touch {
     max-width: auto;
     margin: auto;
-    width: 600px;
+    max-width: 600px;
 }
 
 /* space between firstname and lastname */
@@ -398,8 +398,7 @@ max-width, max-heigt
 never use fixed sizes
 use seperate navbars
 
-[ ] - make scroll unavailable in mobile version
-[ ] - add overlay to mobile navbar
+[x] - make scroll unavailable in mobile version
 */
 
 @media(max-width: 1050px) {
@@ -442,7 +441,7 @@ use seperate navbars
         height: auto;
         margin-top: 5rem;
     }
-    
+
     .banner .grid {
         grid-template-columns: 1fr;
         overflow: hidden;
@@ -463,7 +462,7 @@ use seperate navbars
     .acheivements {
         margin-top: 5rem;
     }
-    
+
     .acheivements .grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -472,4 +471,58 @@ use seperate navbars
         max-width: 194px;
         margin: auto;
     }
+}
+
+@media (max-width: 820px) {
+    .guidance-items {
+        grid-template-columns: 1fr;
+    }
+
+    .guidance-item {
+        justify-self: center;
+    }
+}
+
+@media (max-width: 700px) {
+    footer .contacts {
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+    }
+}
+
+
+@media (max-width: 620px) {
+    .get-in-touch .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        display: none;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .banner-image img {
+        max-width: 300px;
+    }
+
+    .acheivements {
+        padding: 2rem 0;
+    }
+
+    .acheivements .grid {
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+    }
+
+    .guidance-item,
+    .services-item {
+        height: auto;
+    }
+
+    .mobile-menu {
+        left: 30%;
+    }
+
 }

@@ -216,18 +216,22 @@ button {
 
 /* services */
 
+.services {
+    margin-top: 173px;
+}
+
 .services .grid {
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 5rem;
+    column-gap: 1rem;
 }
 
 .services-item {
     padding: 3rem;
-    margin-top: 173px;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
     text-align: center;
     border-radius: 1rem;
     height: 300px;
+    max-width: 300px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
 }
 
@@ -320,6 +324,71 @@ button {
 
 /* get in touch */
 
+.get-in-touch {
+    max-width: auto;
+    margin: auto;
+    width: 600px;
+}
+
+/* space between firstname and lastname */
+.get-in-touch div.grid {
+    gap: 1rem;
+}
+
+/* space between form rows */
+.get-in-touch form.grid {
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+}
+
+.get-in-touch input {
+    height: 38px;
+}
+
+.get-in-touch input,
+.get-in-touch textarea {
+    border: 3px solid var(--primary-color);
+}
+
+.get-in-touch .email {
+    max-width: 100%;
+}
+
+.get-in-touch .form-group {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.get-in-touch button {
+    width: 110px;
+}
+
+/* footer */
+
+footer {
+    margin-top: 173px;
+}
+
+footer .contacts {
+    background: #F5F5F5;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 4rem 0;
+}
+
+footer .bottom-bar {
+    text-align: center;
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+    padding: 0.5rem 0;
+}
+
+.contact-item {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
 
 /* 
 responsive
@@ -333,9 +402,25 @@ use seperate navbars
 [ ] - add overlay to mobile navbar
 */
 
+@media(max-width: 1050px) {
+    .services .grid {
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+}
+
 @media (max-width: 1170px) {
     .acheivements .grid {
         gap: 2rem;
+    }
+
+    .card .grid {
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+    }
+
+    .card .grid div {
+        justify-self: center;
     }
 }
 
@@ -355,6 +440,7 @@ use seperate navbars
     /* banner */
     .banner {
         height: auto;
+        margin-top: 5rem;
     }
     
     .banner .grid {
